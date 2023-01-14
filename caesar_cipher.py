@@ -20,7 +20,10 @@ def caesar(start_text, shift_amount, cypher_direction):
         shift_amount *= -1
 
     for letter in start_text:
-        end_text += alphabet[alphabet.index(letter) + shift_amount]
+        if letter in alphabet:
+            end_text += alphabet[alphabet.index(letter) + shift_amount]
+        else:
+            end_text += letter
 
     print(f"The {cypher_direction}d text is: {end_text}")
 
